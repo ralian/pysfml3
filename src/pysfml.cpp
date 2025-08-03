@@ -8,6 +8,9 @@ void bind_window(pybind11::module_& m);
 void bind_graphics(pybind11::module_& m);
 void bind_event(pybind11::module_& m);
 void bind_keyboard(pybind11::module_& m);
+void bind_mouse(pybind11::module_& m);
+void bind_font(pybind11::module_& m);
+void bind_text(pybind11::module_& m);
 
 PYBIND11_MODULE(pysfml3, m) {
     m.doc() = "Python bindings for SFML (Simple and Fast Multimedia Library) v3";
@@ -20,4 +23,7 @@ PYBIND11_MODULE(pysfml3, m) {
 
     bind_event(m);
     bind_keyboard(m);
-} 
+    bind_mouse(m);
+    bind_font(m);
+    bind_text(m);
+}

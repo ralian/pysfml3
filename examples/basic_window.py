@@ -23,21 +23,17 @@ def main():
     window.set_vertical_sync_enabled(True)
     # window.set_framerate_limit(60)
 
-    keep_running = True
-
     # Main loop
-    while window.is_open() and keep_running:
+    while window.is_open():
         while event := window.poll_event():
             if keyevent := event.get_if(sf.Event.KeyPressed):
                 mycolor = sf.Color(randint(0, 255), randint(0, 255), randint(0, 255))
                 if keyevent.code == sf.Keyboard.Key.ESCAPE:
-                    keep_running = False
+                    window.close()
             if event.is_type(sf.Event.Closed):
-                keep_running = False
+                window.close()
 
         window.clear(mycolor)
-
-        # Display the rendered frame
         window.display()
 
 

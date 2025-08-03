@@ -18,7 +18,10 @@ find_package(SFML 3 REQUIRED COMPONENTS Window Graphics System PATHS "C:/Program
 pybind11_add_module(pysfml3 
     src/pysfml.cpp
     src/Event.cpp
+    src/Font.cpp
     src/Keyboard.cpp
+    src/Mouse.cpp
+    src/Text.cpp
     src/system_bindings.cpp
     src/window_bindings.cpp
     src/graphics_bindings.cpp
