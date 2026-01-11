@@ -39,6 +39,7 @@ pybind11_add_module(pysfml3
     src/Font.cpp
     src/Keyboard.cpp
     src/Mouse.cpp
+    src/Joystick.cpp
     src/Text.cpp
     src/system_bindings.cpp
     src/window_bindings.cpp
