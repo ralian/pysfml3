@@ -16,7 +16,7 @@ void bind_text(py::module_& m) {
     
     text.def(py::init<const sf::Font&, const std::string&, unsigned int>())
         .def("set_string", &sf::Text::setString)
-        .def("set_font", py::overload_cast<const sf::Font&>(&sf::Text::setFont))
+//        .def("set_font", py::overload_cast<const sf::Font&>(&sf::Text::setFont))
         .def("set_character_size", &sf::Text::setCharacterSize)
         .def("set_line_spacing", &sf::Text::setLineSpacing)
         .def("set_letter_spacing", &sf::Text::setLetterSpacing)

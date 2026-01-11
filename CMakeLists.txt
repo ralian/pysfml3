@@ -8,10 +8,28 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SFML_STATIC_LIBRARIES ON)
 
+add_compile_options(-fPIC)
+
+include(FetchContent)
+set(pybind11_SOURCE_DIR pybind11)
+FetchContent_Declare(
+    pybind11 EXCLUDE_FROM_ALL SYSTEM OVERRIDE_FIND_PACKAGE
+    GIT_REPOSITORY  https://github.com/pybind/pybind11.git
+    GIT_TAG         v3.0.1
+)
+set(sfml_SOURCE_DIR sfml)
+FetchContent_Declare(
+    sfml EXCLUDE_FROM_ALL SYSTEM OVERRIDE_FIND_PACKAGE
+    GIT_REPOSITORY  https://github.com/SFML/SFML.git
+    GIT_TAG         3.0.1
+)
+
+FetchContent_MakeAvailable(pybind11 sfml)
+
 # Find required packages
 #set(PYBIND11_FINDPYTHON ON)
 #set(PYBIND11_PYTHON_VERSION 3.13)
-find_package(pybind11 REQUIRED PATHS "C:/Program Files (x86)/pybind11/share/cmake/pybind11/")
+find_package(pybind11 REQUIRED) #  PATHS "C:/Program Files (x86)/pybind11/share/cmake/pybind11/"
 find_package(SFML 3 REQUIRED COMPONENTS Window Graphics System PATHS "C:/Program Files (x86)/SFML/lib/cmake/SFML") # 
 
 # Create the Python module

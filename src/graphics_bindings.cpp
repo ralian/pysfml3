@@ -184,7 +184,7 @@ void bind_graphics(py::module_& m) {
     py::class_<sf::Sprite, sf::Drawable, sf::Transformable>(m, "Sprite")
         .def(py::init<const sf::Texture&>())
         .def(py::init<const sf::Texture&, const sf::IntRect&>())
-        .def("set_texture", py::overload_cast<const sf::Texture&, bool>(&sf::Sprite::setTexture), py::arg("texture"), py::arg("reset_rect") = false)
+//        .def("set_texture", py::overload_cast<const sf::Texture&, bool>(&sf::Sprite::setTexture), py::arg("texture"), py::arg("reset_rect") = false)
         .def("set_texture_rect", &sf::Sprite::setTextureRect)
         .def("set_color", &sf::Sprite::setColor)
         .def("get_texture", &sf::Sprite::getTexture, py::return_value_policy::reference_internal)

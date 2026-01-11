@@ -8,7 +8,7 @@ This example demonstrates handling basic mouse events.
 import pysfml3 as sf
 
 arial = sf.Font()
-arial.open_from_file("fonts/arial.ttf") # implicit conversion happens to pysfml3.Path... ew
+arial.open_from_file("./examples/fonts/arial.ttf") # implicit conversion happens to pysfml3.Path... ew
 
 def main():
     window = sf.RenderWindow(
